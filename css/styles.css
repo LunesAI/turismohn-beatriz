@@ -1,0 +1,322 @@
+:root {
+  --tinta: #14211e;
+  --niebla: #e7efeb;
+  --agua: #0b3a44;
+  --profundidad: #071f26;
+  --miel: #e6b15a;
+  --enlace: #7a4512;
+  --arena: #f7f1e6;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: "Avenir Next", "Segoe UI", sans-serif;
+  --barra: 4.25rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--niebla);
+  color: var(--tinta);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--miel);
+  outline-offset: 3px;
+}
+
+.saltar {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  background: var(--miel);
+  color: var(--profundidad);
+  padding: 0.6rem 0.9rem;
+  font-family: var(--sans);
+  text-decoration: none;
+}
+
+.saltar:focus {
+  top: 0.6rem;
+}
+
+.barra {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  min-height: var(--barra);
+  padding: 0.75rem 1.25rem;
+  background: var(--profundidad);
+  color: var(--arena);
+  font-family: var(--sans);
+}
+
+.marca {
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+.menu-boton {
+  margin-left: auto;
+  border: 1px solid var(--miel);
+  background: transparent;
+  color: var(--arena);
+  font: inherit;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+}
+
+#indice {
+  display: none;
+  flex-basis: 100%;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding-bottom: 0.4rem;
+}
+
+#indice a {
+  text-decoration: none;
+  padding: 0.35rem 0;
+}
+
+#indice a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.barra.menu-abierto #indice {
+  display: flex;
+}
+
+.portada {
+  position: relative;
+  min-height: calc(100vh - var(--barra));
+  min-height: calc(100svh - var(--barra));
+  background: var(--agua);
+  color: var(--arena);
+}
+
+.portada img {
+  display: block;
+  width: 100%;
+  height: calc(100vh - var(--barra));
+  height: calc(100svh - var(--barra));
+  min-height: 28rem;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.portada,
+.presentacion,
+.lugar,
+.cierre {
+  scroll-margin-top: 5.5rem;
+}
+
+.portada-texto {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.75rem 1.25rem 2.5rem;
+  background: linear-gradient(to top, rgba(7, 31, 38, 0.94) 0%, rgba(7, 31, 38, 0.72) 48%, rgba(7, 31, 38, 0) 100%);
+}
+
+.portada-marca {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  margin-bottom: 0.6rem;
+}
+
+.portada h1 {
+  max-width: 10em;
+  font-size: clamp(2.6rem, 6vw, 4.8rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.portada-enlace {
+  display: inline-block;
+  margin-top: 1.25rem;
+  font-family: var(--sans);
+  color: var(--miel);
+  text-underline-offset: 0.22em;
+}
+
+.presentacion,
+.lugar-texto,
+.cierre {
+  padding: 2.5rem 1.25rem;
+}
+
+.presentacion {
+  max-width: 40rem;
+}
+
+.presentacion h2,
+.lugar-texto h2,
+.cierre h2 {
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.presentacion p,
+.lugar-texto p,
+.cierre p {
+  max-width: 38rem;
+  margin-top: 1rem;
+}
+
+.donde {
+  font-family: var(--sans);
+  color: var(--agua);
+  margin-top: 0.45rem;
+}
+
+.lugar-foto {
+  margin: 0;
+  background: var(--agua);
+}
+
+.lugar-foto img {
+  display: block;
+  width: 100%;
+  max-height: 78vh;
+  object-fit: cover;
+}
+
+.credito {
+  margin: 0;
+  padding: 0.4rem 0.75rem 0.55rem;
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: var(--arena);
+}
+
+.cierre {
+  background: var(--agua);
+  color: var(--arena);
+}
+
+.cierre p {
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.45;
+}
+
+.pie {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  justify-content: space-between;
+  padding: 1.25rem;
+  background: var(--profundidad);
+  color: var(--arena);
+  font-family: var(--sans);
+}
+
+.pie a {
+  color: var(--miel);
+}
+
+@media (min-width: 960px) {
+  .menu-boton {
+    display: none;
+  }
+
+  #indice {
+    display: flex;
+    flex-basis: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin-left: auto;
+    padding: 0;
+  }
+
+  .portada-texto {
+    padding: 4rem 6vw 3.5rem;
+  }
+
+  .presentacion {
+    padding: 4.5rem 8vw;
+  }
+
+  .lugar {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr;
+    align-items: center;
+  }
+
+  .lugar--invertido .lugar-foto {
+    order: 2;
+  }
+
+  .lugar-texto {
+    padding: 3rem 6vw;
+  }
+
+  .lugar--invertido .lugar-texto {
+    padding-left: 8vw;
+  }
+
+  .cierre {
+    padding: 5rem 8vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .portada-texto {
+    animation: surgir 700ms ease both;
+  }
+}
+
+@keyframes surgir {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
